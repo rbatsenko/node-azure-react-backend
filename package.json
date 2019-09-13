@@ -1,5 +1,5 @@
 {
-  "name": "httpPlanets",
+  "name": "httpplanets",
   "version": "0.0.1",
   "dependencies": {
     "axios": "0.19.0"
