@@ -5,7 +5,9 @@ module.exports = async function(context, req) {
 
   try {
     const response = await axios.get('https://swapi.co/api/planets/');
-    context.log('Fetched planets from SWAPI.');
+    const requestDate = new Date();
+    const formattedDate = `${requestDate.getDate()}.${requestDate.getMonth()}.${requestDate.getFullYear()}@${requestDate.getHours()}:${requestDate.getMinutes()}:${requestDate.getSeconds()}:${requestDate.getMilliseconds()}`;
+    context.log(`Fetched planets from SWAPI at ${formattedDate}`);
     context.res = {
       status: 200,
       headers: {
