@@ -2,7 +2,6 @@ const axios = require('axios');
 
 module.exports = async function(context, req) {
   context.log('HTTP trigger function processed a request.');
-  context.log(req.wakeUp);
 
   try {
     if (context.req.method === 'GET') {
