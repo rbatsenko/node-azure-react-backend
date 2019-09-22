@@ -31,6 +31,19 @@ module.exports = async function(context, req) {
             data: { wakingUp: true },
           },
         };
+      } else {
+        context.log(error);
+        context.res = {
+          status: 500,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: {
+            status: false,
+            body: 'Malformatted request :/',
+            error: error,
+          },
+        };
       }
     }
   } catch (error) {
